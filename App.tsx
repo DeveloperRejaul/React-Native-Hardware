@@ -1,12 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet} from 'react-native';
 import React from 'react';
-import Index from './src/fs/Index';
+import {NativeBaseProvider} from 'native-base';
+import RootNavigation from './src/navigation/RootNavigation/Root';
 
 export default function App() {
   return (
-    <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Index />
-    </View>
+    <>
+      <StatusBar barStyle={'dark-content'} backgroundColor={'#fff'} />
+      <NativeBaseProvider>
+        <RootNavigation />
+      </NativeBaseProvider>
+    </>
   );
 }
 
